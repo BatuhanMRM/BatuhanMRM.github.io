@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batuhan Mermi — Data Analyst & Game Developer</title>
+  <meta name="description" content="Batuhan Mermi: data analyst working in data governance, and game developer at Triarch Interactive with 14 games on Steam and Google Play.">
+  <meta property="og:title" content="Batuhan Mermi — Data Analyst & Game Developer">
+  <meta property="og:description" content="Data governance by day, games on Steam and Google Play.">
+  <meta property="og:image" content="assets/games/steam-4251090-shot.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2310161C'/><path d='M6 22 L16 6 L26 22 Z' fill='none' stroke='%23F2B33D' stroke-width='3'/><circle cx='16' cy='17' r='3' fill='%235FD0C0'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#library">Skip to games</a>
+
+  <header class="nav">
+    <a class="nav-mark" href="#top" aria-label="Back to top">BM<span>_</span></a>
+    <nav aria-label="Sections">
+      <a href="#library">Games</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#log">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cv" href="mailto:batuhanmermi@gmail.com">Email me</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO: character sheet with two classes -->
+    <section class="hero">
+      <div class="hero-id">
+        <p class="eyebrow">Player profile · Istanbul, Turkey</p>
+        <h1 class="hero-name">Batuhan<br>Mermi</h1>
+        <p class="hero-lede">
+          I work on enterprise data governance at <strong>Doğuş Teknoloji</strong> and design games at
+          <strong>Triarch Interactive</strong>. Two disciplines, one habit: find the structure, then make it usable.
+        </p>
+        <div class="hero-links">
+          <a class="btn btn-game" href="#library">Browse 14 games</a>
+          <a class="btn btn-ghost" href="https://github.com/BatuhanMRM" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/batuhan-mermi" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="sheet" aria-label="Character classes">
+        <div class="sheet-head">
+          <span>Select class</span><span class="mono">2 / 2 unlocked</span>
+        </div>
+        <article class="cls cls-data">
+          <div class="cls-top">
+            <span class="cls-tag">Class A</span>
+            <span class="cls-since mono">since 2025</span>
+          </div>
+          <h2>Data Analyst</h2>
+          <p>Data discovery, metadata management, cataloging, data quality and KVKK/GDPR compliance. Built DataTrac Discovery end-to-end.</p>
+          <ul class="cls-kit mono">
+            <li>SQL</li><li>Power BI</li><li>IBM CP4D</li><li>PII detection</li>
+          </ul>
+        </article>
+        <article class="cls cls-game">
+          <div class="cls-top">
+            <span class="cls-tag">Class B</span>
+            <span class="cls-since mono">since 2021</span>
+          </div>
+          <h2>Game Developer</h2>
+          <p>Game design, 3D art and Unity development. Games on Steam and Google Play, from cozy mobile puzzles to co-op sci-fi.</p>
+          <ul class="cls-kit mono">
+            <li>Unity · C#</li><li>Unreal</li><li>Blender</li><li>Level design</li>
+          </ul>
+        </article>
+        <div class="sheet-foot mono">
+          <span>B.Sc. Digital Game Design</span><span>GPA 3.55 / 4.00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME LIBRARY: the SQL query is the filter -->
+    <section id="library" class="section library">
+      <div class="hazard" aria-hidden="true"></div>
+      <div class="section-head">
+        <p class="eyebrow eyebrow-game">Game library · Triarch Interactive</p>
+        <h2 class="section-title">Games I've worked on</h2>
+        <p class="section-sub">Click the highlighted values in the query to filter. Click any game for details and my role.</p>
+      </div>
+
+      <div class="query" role="group" aria-label="Filter games">
+        <div class="query-bar">
+          <span class="query-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="mono query-file">games.sql</span>
+          <div class="view-toggle" role="radiogroup" aria-label="View">
+            <button type="button" class="vt is-on" data-view="cards" role="radio" aria-checked="true">Cards</button>
+            <button type="button" class="vt" data-view="table" role="radio" aria-checked="false">Table</button>
+          </div>
+        </div>
+        <pre class="query-code mono"><span class="kw">SELECT</span> title, role, status
+<span class="kw">FROM</span>   games
+<span class="kw">WHERE</span>  platform = <button type="button" class="tok" data-key="platform" aria-label="Platform filter"></button>
+  <span class="kw">AND</span>  status   = <button type="button" class="tok" data-key="status" aria-label="Status filter"></button>
+  <span class="kw">AND</span>  role     = <button type="button" class="tok" data-key="role" aria-label="Role filter"></button>
+<span class="kw">ORDER BY</span> platform, release;</pre>
+        <div class="query-result mono" aria-live="polite"><span class="ok">✓</span> <span id="rowCount">14</span> rows returned</div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="table" class="table-wrap" hidden></div>
+      <p id="empty" class="empty" hidden>No games match this query. <button type="button" class="link" id="resetQuery">Reset the filters</button></p>
+    </section>
+
+    <!-- ANALYTICS: real charts from the game dataset -->
+    <section id="analytics" class="section analytics">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-data">Portfolio analytics · computed from the library above</p>
+        <h2 class="section-title">The library, as a dataset</h2>
+        <p class="section-sub">A data analyst's habit: these charts are generated live from the same <code>games.js</code> file that drives the cards.</p>
+      </div>
+      <div class="dash">
+        <div class="panel" id="kpis"></div>
+        <div class="panel"><h3 class="panel-title">Games by role</h3><div id="chartRole" class="bars"></div></div>
+        <div class="panel"><h3 class="panel-title">Games by genre family</h3><div id="chartGenre" class="bars"></div></div>
+        <div class="panel panel-wide"><h3 class="panel-title">Steam release timeline</h3><div id="chartTimeline" class="timeline"></div></div>
+      </div>
+    </section>
+
+    <!-- FEATURED DATA PROJECT -->
+    <section class="section project">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-data">Featured data project</p>
+        <h2 class="section-title">DataTrac Discovery</h2>
+        <p class="section-sub">A production-grade data discovery and metadata catalog platform, designed and built end-to-end.</p>
+      </div>
+      <div class="pipe" aria-label="How DataTrac works">
+        <div class="pipe-step"><span class="mono">scan</span><h3>Connect sources</h3><p>Scans structured and unstructured data sources.</p></div>
+        <div class="pipe-step"><span class="mono">detect</span><h3>Find PII</h3><p>Detects and classifies personal and sensitive data in line with KVKK.</p></div>
+        <div class="pipe-step"><span class="mono">collect</span><h3>Gather metadata</h3><p>Collects metadata for every discovered asset.</p></div>
+        <div class="pipe-step"><span class="mono">catalog</span><h3>Searchable inventory</h3><p>Produces a data inventory that supports governance and compliance workflows.</p></div>
+      </div>
+      <p class="project-foot">I owned the full lifecycle: system architecture, feature design, implementation and UI.
+        <a href="https://github.com/BatuhanMRM" target="_blank" rel="noopener">See the showcase on GitHub →</a></p>
+    </section>
+
+    <!-- QUEST LOG -->
+    <section id="log" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Quest log</p>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <ol class="log">
+        <li class="quest q-data">
+          <div class="quest-when mono">2025 – 2026</div>
+          <div class="quest-body">
+            <span class="quest-tag mono">Data</span>
+            <h3>Data Analytics Intern <span>· Doğuş Teknoloji</span></h3>
+            <ul>
+              <li>Supported enterprise data governance projects, including metadata management and data inventory processes.</li>
+              <li>Ran structured and unstructured data discovery with IBM Cloud Pak for Data.</li>
+              <li>Wrote SQL queries to analyze datasets and support data quality checks and reporting.</li>
+              <li>Contributed to data cataloging, classification and KVKK / GDPR compliance initiatives.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="quest q-game">
+          <div class="quest-when mono">2024 – 2025</div>
+          <div class="quest-body">
+            <span class="quest-tag mono">Game</span>
+            <h3>Game Artist <span>· Moda Games</span></h3>
+            <ul>
+              <li>Designed and implemented 20+ 3D models, textures and UI assets with Blender, Photoshop and Illustrator for shipped titles.</li>
+              <li>Optimized the asset production pipeline, cutting design-to-implementation time by 15%.</li>
+              <li>Integrated assets into Unity with developers and senior designers.</li>
+              <li>Used Git/GitHub for version control and task tracking in a team of 5+.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="quest q-edu">
+          <div class="quest-when mono">2021 – 2025</div>
+          <div class="quest-body">
+            <span class="quest-tag mono">Education</span>
+            <h3>B.Sc. Digital Game Design <span>· Istanbul Beykent University</span></h3>
+            <ul><li>Graduated with a GPA of 3.55 / 4.00.</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Skill tree</p>
+        <h2 class="section-title">Tools I use</h2>
+      </div>
+      <div class="tree">
+        <div class="branch b-data">
+          <h3>Data & analytics</h3>
+          <ul><li>SQL</li><li>Power BI</li><li>IBM Cloud Pak for Data</li><li>Data analysis</li><li>Data visualization</li></ul>
+        </div>
+        <div class="branch b-data">
+          <h3>Data governance</h3>
+          <ul><li>Data discovery</li><li>Metadata management</li><li>Data cataloging</li><li>Data classification</li><li>Data quality</li><li>PII detection</li><li>KVKK / GDPR</li></ul>
+        </div>
+        <div class="branch b-both">
+          <h3>Programming & tools</h3>
+          <ul><li>C#</li><li>SQL</li><li>Lua</li><li>Dart (Flutter)</li><li>HTML</li><li>CSS</li><li>Git / GitHub</li></ul>
+        </div>
+        <div class="branch b-game">
+          <h3>Game development</h3>
+          <ul><li>Unity</li><li>Unreal Engine (Blueprint)</li><li>Roblox Studio</li><li>Level design</li><li>Game-ready assets</li></ul>
+        </div>
+        <div class="branch b-game">
+          <h3>3D / 2D art</h3>
+          <ul><li>Blender</li><li>Maya</li><li>Photoshop</li><li>Illustrator</li><li>Aseprite</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <p class="eyebrow">Continue?</p>
+      <h2 class="contact-title">Let's build something<br>with data or with play.</h2>
+      <a class="contact-mail" href="mailto:batuhanmermi@gmail.com">batuhanmermi@gmail.com</a>
+      <div class="hero-links">
+        <a class="btn btn-ghost" href="https://github.com/BatuhanMRM" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/batuhan-mermi" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>© 2026 Batuhan Mermi</span>
+    <span>Game images © Triarch Interactive</span>
+  </footer>
+
+  <dialog id="modal" class="modal" aria-labelledby="mTitle">
+    <button type="button" class="modal-close" aria-label="Close">×</button>
+    <div id="modalBody"></div>
+  </dialog>
+
+  <script src="js/games.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
